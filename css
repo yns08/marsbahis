@@ -29,5 +29,24 @@ a {
 
 a:hover {
     cursor: pointer; /* Tıklanabilir olduğunu belirtmek için */
+}.logo-section {
+    text-align: center; /* Logoyu ve metni ortalar */
+    margin-top: 20px; /* Üstten boşluk bırakır */
 }
+
+.site-logo {
+    width: 150px; /* Logonun genişliği */
+    height: auto; /* Oranını koruması için */
+    display: block; /* Altındaki yazıyı düzgün hizalar */
+    margin: 0 auto; /* Ortalar */
+}
+
+.link-text {
+    display: inline-block; /* Blok olarak görünsün */
+    margin-top: 10px; /* Logodan biraz boşluk bırakır */
+    font-size: 18px; /* Yazı boyutu */
+    color: red; /* Yazıyı kırmızı yapar */
+    text-decoration: underline; /* Altı çizili yapar */
+}
+
 
