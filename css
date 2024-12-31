@@ -16,4 +16,18 @@
 
 .btn:hover {
     opacity: 0.9;
+}.site-logo {
+    width: 150px; /* Resmin genişliği */
+    height: auto; /* Oranını koruması için */
+    display: block;
+    margin: 0 auto; /* Ortalamak için */
 }
+
+a {
+    text-decoration: none; /* Alt çizgiyi kaldırır */
+}
+
+a:hover {
+    cursor: pointer; /* Tıklanabilir olduğunu belirtmek için */
+}
+
