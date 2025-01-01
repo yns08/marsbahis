@@ -1,2 +1,38 @@
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <img src="logo.png" alt="">
+    </div>
+    <div class="button-div">
+    <a id="button1" href="#" class="button red-button">Giriş Yap</a>
+    <a id="button2" href="#" class="button yellow-button">Hemen Üye Ol</a>
+</div>
 
+    <div class="description">
+      <h2>Marsbahis Giriş</h2>
+      <p>Marsbahishemen.com, spor bahisleri, canlı casino, poker, tombala ve daha birçok heyecan verici oyun seçeneğiyle sizlere kesintisiz hizmet sunuyor! Güvenilir ve hızlı giriş imkanıyla Marsbahis'in ayrıcalıklarını hemen keşfedin. Güncel giriş adresimiz üzerinden hemen üye olun ve kazanmaya başlayın!</p>
+      <a id="button3" href="#" class="button red-button">Hemen Üye Ol</a>
+    </div>
+  </div>
+</body>
+</html>
+<script>
+fetch('url.json')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Ağ hatası!');
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log(data);
+        document.getElementById('button1').href = 'https://mobile.xn--449marsbahs-xcb.com/';
+        document.getElementById('button2').href = 'https://mobile.xn--449marsbahs-xcb.com/';
+        document.getElementById('button3').href = 'https://mobile.xn--449marsbahs-xcb.com/';
+    })
+    .catch(error => {
+        console.error('Veri alınamadı:', error);
+    });
 
