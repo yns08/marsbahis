@@ -1,38 +1,84 @@
-</style>
-</head>
-<body>
-  <div class="container">
-    <div class="logo">
-      <img src="logo.png" alt="">
-    </div>
-    <div class="button-div">
-    <a id="button1" href="#" class="button red-button">Giriş Yap</a>
-    <a id="button2" href="#" class="button yellow-button">Hemen Üye Ol</a>
-</div>
+/* Genel Ayarlar */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: white;
+  background-color: #121212; /* Arka plan için koyu renk */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
 
-    <div class="description">
-      <h2>Marsbahis Giriş</h2>
-      <p>Marsbahishemen.com, spor bahisleri, canlı casino, poker, tombala ve daha birçok heyecan verici oyun seçeneğiyle sizlere kesintisiz hizmet sunuyor! Güvenilir ve hızlı giriş imkanıyla Marsbahis'in ayrıcalıklarını hemen keşfedin. Güncel giriş adresimiz üzerinden hemen üye olun ve kazanmaya başlayın!</p>
-      <a id="button3" href="#" class="button red-button">Hemen Üye Ol</a>
-    </div>
-  </div>
-</body>
-</html>
-<script>
-fetch('url.json')
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Ağ hatası!');
-        }
-        return response.json();
-    })
-    .then(data => {
-        console.log(data);
-        document.getElementById('button1').href = 'https://mobile.xn--449marsbahs-xcb.com/';
-        document.getElementById('button2').href = 'https://mobile.xn--449marsbahs-xcb.com/';
-        document.getElementById('button3').href = 'https://mobile.xn--449marsbahs-xcb.com/';
-    })
-    .catch(error => {
-        console.error('Veri alınamadı:', error);
-    });
+/* Konteyner Stilleri */
+.container {
+  text-align: center;
+  padding: 20px;
+  background-color: #0e1120; /* Kart arka plan rengi */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 400px;
+}
 
+/* Logo Stili */
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.logo img {
+  width: 200px; /* Logoyu optimize edilmiş boyutta gösterir */
+  vertical-align: middle;
+}
+
+/* Butonlar */
+.button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: inline-block;
+  transition: all 0.3s ease; /* Hover efekt için geçiş */
+}
+
+.red-button {
+  background-color: #ff4d4d;
+  color: white;
+  margin: 10px;
+}
+
+.red-button:hover {
+  background-color: #e84343; /* Hover rengi */
+}
+
+.yellow-button {
+  background-color: #ffcc00;
+  color: black;
+}
+
+.yellow-button:hover {
+  background-color: #e6b800; /* Hover rengi */
+}
+
+/* Açıklama Alanı */
+.description {
+  margin-top: 20px;
+  font-size: 14px;
+  line-height: 1.6;
+  width: 70%;
+  text-align: center;
+  margin: 40px auto;
+}
+
+.description p {
+  margin-bottom: 30px;
+}
+
+.button-div {
+  margin: 10px;
+}
