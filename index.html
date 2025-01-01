@@ -25,19 +25,8 @@
       width: 400px;
     }
 
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
-      margin-bottom: 40px;
-    }
-
     .logo img {
       width: 300px;
-      vertical-align: middle;
-    }
-
-    .logo span {
-      color: #ff0000;
     }
 
     .button {
@@ -47,12 +36,13 @@
       cursor: pointer;
       font-size: 16px;
       margin: 10px 0;
+      text-decoration: none;
+      display: inline-block;
     }
 
     .red-button {
       background-color: #ff4d4d;
       color: white;
-      margin: 10px;
     }
 
     .yellow-button {
@@ -64,28 +54,18 @@
       margin-top: 20px;
       font-size: 14px;
       line-height: 1.6;
-      width: 70%;
-      text-align: center;
-      margin: 40px auto;
-    }
-    .description p {
-        margin-bottom: 50px;
-    }
-    .button-div{
-        margin: 10px;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="logo">
-      <img src="logo.png" alt="">
+      <img src="logo.png" alt="Marsbahis Logo">
     </div>
     <div class="button-div">
-    <a id="button1" href="#" class="button red-button">Giriş Yap</a>
-    <a id="button2" href="#" class="button yellow-button">Hemen Üye Ol</a>
-</div>
-
+      <a id="button1" href="#" class="button red-button">Giriş Yap</a>
+      <a id="button2" href="#" class="button yellow-button">Hemen Üye Ol</a>
+    </div>
     <div class="description">
       <h2>Marsbahis Giriş</h2>
       <p>Marsbahishemen.com, spor bahisleri, canlı casino, poker, tombala ve daha birçok heyecan verici oyun seçeneğiyle sizlere kesintisiz hizmet sunuyor! Güvenilir ve hızlı giriş imkanıyla Marsbahis'in ayrıcalıklarını hemen keşfedin. Güncel giriş adresimiz üzerinden hemen üye olun ve kazanmaya başlayın!</p>
@@ -93,24 +73,24 @@
     </div>
   </div>
 </body>
-</html>
 <script>
-fetch('url.json')
+  // Yönlendirme için JSON verisi alınıyor
+  fetch('url.json')
     .then(response => {
-        if (!response.ok) {
-            throw new Error('Ağ hatası!');
-        }
-        return response.json();
+      if (!response.ok) {
+        throw new Error('Ağ hatası: Dosya yüklenemedi!');
+      }
+      return response.json();
     })
     .then(data => {
-        console.log(data);
-        document.getElementById('button1').href = 'https://mobile.xn--451marsbahs-xcb.com/';
-        document.getElementById('button2').href = 'https://mobile.xn--451marsbahs-xcb.com/';
-        document.getElementById('button3').href = 'https://mobile.xn--451marsbahs-xcb.com/';
+      // JSON dosyasından gelen linkleri butonlara ata
+      document.getElementById('button1').href = data.loginUrl || 'https://mobile.xn--451marsbahs-xcb.com/';
+      document.getElementById('button2').href = data.signupUrl || 'https://mobile.xn--451marsbahs-xcb.com/';
+      document.getElementById('button3').href = data.signupUrl || 'https://mobile.xn--451marsbahs-xcb.com/';
     })
     .catch(error => {
-        console.error('Veri alınamadı:', error);
+      console.error('Hata: Veri alınamadı:', error);
     });
-
-
+</script>
+</html>
 
